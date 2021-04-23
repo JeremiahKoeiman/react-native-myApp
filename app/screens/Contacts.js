@@ -1,11 +1,24 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, FlatList, Platform, StyleSheet} from 'react-native';
+import {contacts} from '../config/data';
+import colors from '../config/colors'
+import ListItem from '../components/ListItem/ListItem'
+
 
 const Contacts = () => {
+
+  const handleRowPress = (item) => {
+    return null
+  }
+
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Contacts Screen</Text>
-    </View>
+    <FlatList
+      data={contacts}
+      renderItem={({item}) =>
+        <ListItem contact={item} onPress={() => handleRowPress(item)}/>
+      }
+      keyExtractor={(item) => item.email}
+    />
   );
 };
 export default Contacts;
