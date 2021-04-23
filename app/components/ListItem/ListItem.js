@@ -5,8 +5,6 @@ import {capitalizeFirstLetter} from '../../helpers/string'
 import colors from '../../config/colors'
 import styles, {CHEVRON_SIZE} from './styles'
 
-const icon = (Platform.OS === 'android') ? 'md-arrow-forward' : 'ios-arrow-forward' 
-
 const ListItem = ({contact, onPress}) => {
   const name = `${capitalizeFirstLetter(contact.name.first)} ${capitalizeFirstLetter(contact.name.last)}`
     return (

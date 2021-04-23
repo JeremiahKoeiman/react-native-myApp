@@ -5,10 +5,10 @@ import colors from '../config/colors'
 import ListItem from '../components/ListItem/ListItem'
 
 
-const Contacts = () => {
+const Contacts = ({navigation}) => {
 
   const handleRowPress = (item) => {
-    return null
+    navigation.navigate('Details')
   }
 
   return (
